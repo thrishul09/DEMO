@@ -199,3 +199,31 @@ kubectl get deployment
 kubectl get pods
 kubectl describe pod podname
 kubectl get service myngnix
+
+**********************************************************************
+
+minikube start or minikube start --driver=docker
+
+ minikube status
+
+kubectl create deployment mynginx --image=nginx
+
+ kubectl get deployment
+
+kubectl get pods
+
+ kubectl describe pod mynginx-645865c456-l2xsq//(mynginx-645865c456-l2xsq name when get pods commands run)
+
+kubectl expose deployment mynginx --type=NodePort --port=80 --target-port=80
+
+ kubectl scale deployment mynginx --replicas=4
+
+kubectl get service myngnix  //(you may get output or not no use)
+
+kubectl port-forward svc/mynginx 8081:80 //(get output Forwarding from 127.0.0.1:8081 -> 80
+Forwarding from [::1]:8081 -> 80
+Handling connection for 8081
+Handling connection for 8081
+)
+
+localhost:8081 (in browser)
